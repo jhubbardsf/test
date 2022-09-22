@@ -110,7 +110,15 @@
       text-decoration: none;
    }
 
-   .nav {
+
+   /* ----------------------------------------- */
+
+// Cleaned up the SCSS a bit since you're already using SCSS (I'm a big SCSS fan myself)
+   main {
+      width: 100%;
+      position: fixed;
+      
+      .nav {
       display: flex;
       background-color: orange;
       height: 12vh;
@@ -134,62 +142,61 @@
          animation:shadow-drop-2-center .2s forwards
       }
    }
-
-   /* ----------------------------------------- */
-
-// Cleaned up the SCSS a bit since you're already using SCSS (I'm a big SCSS fan myself)
-   .outer-div {
-      display: grid;
       
-      .inner-div {
-         // Using grid and grid-area 1/1 to force the inner divs into the same area. 
-         // If you don't do this you get a bouncing effect where the incoming div is
-         // pushed below the outgoing div and then "pops up" jarringly.
-         grid-area: 1/1;	
+      .outer-div {
+         display: grid;
+         width: 100vw;
+         
+         .inner-div {
+            // Using grid and grid-area 1/1 to force the inner divs into the same area. 
+            // If you don't do this you get a bouncing effect where the incoming div is
+            // pushed below the outgoing div and then "pops up" jarringly.
+            grid-area: 1/1;	
 
-         .grid-container {
-            background: red; // Made background red just see things easier. Do whatever you want here.
-            display: grid;
-            grid-template-columns: 25vw auto auto 15.2vw;
-            border-top: solid .2vw grey;
-            border-bottom: solid .2vw grey;
-            margin-top: 5vh;
-            margin-bottom: 20vh;
+            .grid-container {
+               background: red; // Made background red just see things easier. Do whatever you want here.
+               display: grid;
+               grid-template-columns: 25vw auto auto 15.2vw;
+               border-top: solid .2vw grey;
+               border-bottom: solid .2vw grey;
+               margin-top: 5vh;
+               margin-bottom: 20vh;
 
-            div {
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               border-bottom: .1vw solid rgb(201, 201, 201);
-            }
-
-            .grid-cell-price {
-               justify-content: left;
-               font-style: italic;
-               font-size: 80%;
-               color: rgba(0, 0, 0, 0.774);
-            }
-
-            .grid-cell-text {
-               grid-column-start: 2;
-               grid-column-end: 4;
-            }
-
-            .grid-cell-icon {
-               img {
-                  width: 100%;
-                  display: block;
-                  margin: auto;
+               div {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-bottom: .1vw solid rgb(201, 201, 201);
                }
-            }
+
+               .grid-cell-price {
+                  justify-content: left;
+                  font-style: italic;
+                  font-size: 80%;
+                  color: rgba(0, 0, 0, 0.774);
+               }
+
+               .grid-cell-text {
+                  grid-column-start: 2;
+                  grid-column-end: 4;
+               }
+
+               .grid-cell-icon {
+                  img {
+                     width: 100%;
+                     display: block;
+                     margin: auto;
+                  }
+               }
 
 
-            .last {
-               border-bottom: none;
-            }
+               .last {
+                  border-bottom: none;
+               }
 
-            .lite {
-               background-color: rgb(245, 245, 245);
+               .lite {
+                  background-color: rgb(245, 245, 245);
+               }
             }
          }
       }
